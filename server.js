@@ -82,7 +82,7 @@ app.post('/submit-patient-data', (req, res) => {
   })
 })
 
-app.get('/get-patient-data', (req, res) => {
+app.get('https://node-js-git-main-michaeletphps-projects.vercel.app/get-patient-data', (req, res) => {
   const sql = 'SELECT * FROM patient_data'
   pool.query(sql, (err, results) => {
     if (err) {
