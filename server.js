@@ -44,7 +44,7 @@ pool.query(
   }
 )
 
-app.post('/submit-patient-data', (req, res) => {
+app.post('/api/submit-patient-data', (req, res) => {
   const {
     name,
     dob,
@@ -82,7 +82,7 @@ app.post('/submit-patient-data', (req, res) => {
   })
 })
 
-app.get('https://node-zjkde3igw-michaeletphps-projects.vercel.app/get-patient-data', (req, res) => {
+app.get('/api/get-patient-data', (req, res) => {
   const sql = 'SELECT * FROM patient_data'
   pool.query(sql, (err, results) => {
     if (err) {
@@ -97,3 +97,5 @@ app.get('https://node-zjkde3igw-michaeletphps-projects.vercel.app/get-patient-da
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
 })
+
+export default app
